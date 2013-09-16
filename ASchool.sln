@@ -1,8 +1,42 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{862F50B2-613C-4188-A712-0E76D93B0E1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A001E0FF-98BB-4D07-A70A-7E7F485499BD}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "docs", "docs\", "{80258BB2-43EF-40D8-BC17-F5B06FBE4BB1}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/docs"
+		Debug.AspNetCompiler.PhysicalPath = "docs\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\docs\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/docs"
+		Release.AspNetCompiler.PhysicalPath = "docs\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\docs\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57432"
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80258BB2-43EF-40D8-BC17-F5B06FBE4BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80258BB2-43EF-40D8-BC17-F5B06FBE4BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{80258BB2-43EF-40D8-BC17-F5B06FBE4BB1} = {A001E0FF-98BB-4D07-A70A-7E7F485499BD}
 	EndGlobalSection
 EndGlobal

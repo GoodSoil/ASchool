@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .auto-style1
+        {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>ASchool Business Rules - Idea Bucket</h1>
+    <p>The business rules here are in "idea" format and exploratory. Once they are clearly worded and accompanied by an example (sample data), then they can be accepted and put into formal Acceptance Test format (Gherkin).</p>
+    <p style="font-style: italic">A note on writing Business Rules and Requirements. I&#39;ve read in a number of places how it&#39;s important to try and strip out language and terminology that has nothing to do specifically with the &quot;language domain&quot; of the business. For example, talking about &quot;when they click a button&quot; or &quot;then the database should&quot; is talking more about the technology rathern than the business. That kind of terminology might be good for narrow unit-tests that get into nitty-gritty internals, but all the &quot;big picture&quot; requirements should just stick to the business&#39; Language Domain.</p>
+    <ul>
+        <li><strong>General</strong><ul>
+            <li>All stories involve some kind of &quot;workflow&quot; - a way in which data moves from one state to another.</li>
+            <li>Each &quot;workflow&quot; has its own set of rules</li>
+            <li>Business rules can be shared among workflows within a given story.</li>
+            <li>Business rules are not shared among different stories; by virtue of being in a different story, it represents a different rule by definition, because the story is the context for each business rule.</li>
+            <li>Stories represent definable sets of data (tables/objects)<ul>
+                <li>(? - uncertain) This data may participate in multiple stories in a read-only fashion and undergo [significant] editing in only one story (their primary story)</li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+        <li><strong>Managing Course Grid</strong> Story
+            <ul>
+                <li>General
+                    <ul>
+                        <li>The only acceptable course statuses are &quot;Proposed&quot;, &quot;Current&quot;, and &quot;Revision&quot;. These statuses are intended to represent a maintenance workflow.(Archiving a course involves removing it from the set of courses, but retaining the information for historical purposes.)
+                            <ul>
+                                <li><span class="auto-style1">Proposed</span> - For new courses that are to be assigned a new course number (as opposed to a revision of a course that will be keeping its Course Number)</li>
+                                <li><span class="auto-style1">Current</span> - For courses that are approved and complete in their information; Current courses are available for scheduling as an offering for any date after the Commencement Date and (if present) before the Completion Date</li>
+                                <li><span class="auto-style1">Revision</span> - For existing courses that are undergoing a significant change, such as the number of credits, hours, semester, course dependencies, Academic path mapping, etc.</li>
+                            </ul>
+                            <img src="Course%20Development%20Cycle.png" />
+                        </li>
+                        <li>A course may be added either as Proposed or Current (provided all other requirements are followed).</li>
+                        <li>Two courses cannot have identical course numbers unless one course's status is "Current" and the other's is "Revision" (This allows a course to be under revision for changes)<ul>
+                            <li>You can only have one Revision of a Current course at any one time</li>
+                            </ul>
+                        </li>
+                        <li>Course must maintain information to know "when" a course is available for being a course offering
+                            <ul>
+                                <li><span class="auto-style1">Approval Date</span> - The date on which a course's status moved to "Current"</li>
+                                <li><span class="auto-style1">Commencement Date</span> - The date on which a current course is slated to be available as a Course Offering</li>
+                                <li><span class="auto-style1">Completion Date</span> - The date on which a current course is to be removed (archived)</li>
+                            </ul>
+
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li>Proposed Courses
+                    <ul>
+                        <li>You can add a course with minimal information (name, credits, class hours per week) provided it's status is "Proposed".</li>
+                        <li>The CourseNumber for a course can only be changed when the course is in a "Proposed" state; it cannot be changed when the course's state is Current or Revision</li>
+                        <li>A new course with a "Proposed" status but without a CourseNumber is given a temporary course number of "PROPOSED-###" where the number generated is one higher than the highest proposed course number saved at present</li>
+                        <li>Courses in a "Proposed" state cannot have a Approval Date, Commencement Date or Completion Date</li>
+                         <li>Any information in a "Proposed" course can be edited, provided the minimal amount of information is still maintained.</li>
+                        <li>Course Dependencies can only be edited/changed/removed if at least one of the courses in the dependency is in the "Proposed" status</li>
+                        <li>Courses can only be mapped to Academic Paths if the Course Status is Proposed</li>
+                        <li>Proposed courses can be deleted, but they cannot be archived</li>
+                       
+                    </ul>
+                </li>
+                <li>Current Courses
+                    <ul>
+                        <li>The minimal information for a course to be &quot;Current&quot; is<ul>
+                            <li>Course Name</li>
+                            <li>Course Number</li>
+                            <li>Credits</li>
+                            <li>Class Hours Per Week</li>
+                            <li>Term</li>
+                            <li>Semester Offered</li>
+                            </ul>
+                        </li>
+                        <li>An existing course can have its status changed from &quot;Proposed&quot; to &quot;Current&quot; provided all the course information has been entered</li>
+                        <li>An existing course can have its status changed from &quot;Revision&quot; to &quot;Current&quot; provided all the course information has been entered</li>
+                        <li>When a course status is moved to "Current", it must also be given an Approval Date and a Commencement Date</li>
+                        <li>A course with its status set to "Current" cannot be changed in any way, except to have its Completion Date set or to be Archived</li>
+                        
+                        <li>Only &quot;Current&quot; courses can be archived, provided they have a Completion Date set and the Completion Date has passed</li>
+                        
+                    </ul>
+                </li>
+                <li>Revision Courses
+                    <ul>
+                        <li>Only "Current" courses can be slated for "Revision"; when slated for Revision, the Current course is copied (except for the Approval Date, Commencement Date, and Completion Date) and the copy is set as a "Revision"</li>
+                        <li>Revisions can be deleted, but they cannot be archived</li>
+                        
+                    </ul>
+                </li>
+                <li>Archiving<ul>
+                    <li>Courses that are slated for &quot;sunsetting&quot; (given a Completion Date) must be maintained in an archive storage for historical purposes.</li>
+                    </ul>
+                </li>
+                <li>Course Dependencies<br />A course dependency occurs where two or more courses are expected to be taken in "sequence" or in "parallel". The courses form a type of <strong>Relationship</strong> and <strong>Connection</strong> to each other. A dependency chain is the complete linkage between courses (A→B↔C→D→E).<ul>
+                    <li>The two types of Relationships possible between courses are <span class="auto-style1"><strong>Prerequisite</strong></span> and <span class="auto-style1"><strong>Corequisite</strong></span><ul>
+                        <li>&quot;Prerequisite&quot; - (A &rarr; B) The courses are to be taken as a sequence, where one course must be completed <strong>before</strong> the other can be taken</li>
+                        <li>&quot;Corequisite&quot; - (A &harr; B) The courses are to be taken in parallel, <strong>at the same time</strong></li>
+                        </ul>
+                    </li>
+                    <li>When describing pre-/co-requisites, the second course is said to &quot;depend upon&quot; the first course. In these examples, B depends upon A.<ul>
+                        <li>A→B</li>
+                        <li>A↔B</li>
+                        </ul>
+                    </li>
+                    <li>Corequisite relationships are not necessarily &quot;bi-directional&quot;. Eg.:<ul>
+                        <li>When stating that A↔B (that is, course B needs A), that does not mean that B↔A (course A needs B). Essentially, course A may stand independent of other courses, while B has a dependency</li>
+                        </ul>
+                    </li>
+                    <li>Prerequisite courses cannot have a circular relationship. Eg: These are not allowed:<ul>
+                        <li>A before B; B before A</li>
+                        <li>A before B, B before C, C before A</li>
+                        </ul>
+                    </li>
+                    <li>Corequisite courses can have a circular relationship. Eg: The following is allowed<ul>
+                        <li>A at the same time as B, B at the same time as A</li>
+                        </ul>
+                    </li>
+                    <li>Indirect circular relationships are not allowed. An indirect circular relationship occurs when prerequisite and corequisite relationships combine in a particular way.<br /><i>(Note: Dependency chains may be complex; care must be taken to ensure that indirect circular relationships are not created between courses. The best way to resolve a dependency chain for a circular dependency is to &quot;walk&quot; the dependencies for each course, looking for a duplicate)</i><ul>
+                        <li>Eg: These are not allowed.<ul>
+                            <li>A before B, B at the same time as C, C before A</li>
+                            <li>A&rarr;B, B&harr;C, C&rarr;D, D&harr;A
+                                <table>
+                                    <tr>
+                                        <td>A</td>
+                                        <td>&rarr;</td>
+                                        <td>B</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Possible</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>B&harr;C</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Possible</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>C</td>
+                                        <td>&rarr;</td>
+                                        <td>D</td>
+                                        <td>Possible</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>D&harr;A</td>
+                                        <td>Impossible</td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>A&rarr;B, B&harr;C, C&rarr;D, A↔D
+                            <table>
+                                    <tr>
+                                        <td>A</td>
+                                        <td>&rarr;</td>
+                                        <td>B</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Possible</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>B&harr;C</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Possible</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="text-align:right">C</td>
+                                        <td>&rarr;</td>
+                                        <td>D</td>
+                                        <td>Possible</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>&harr;</td>
+                                        <td>D</td>
+                                        <td>Impossible</td>
+                                    </tr>
+                                </table>
+                            </li>
+                            </ul>
+                        </li>
+                        <li>Eg.: This would be allowed</li>
+                        <ul>
+                            <li>A&rarr;B, B&harr;C, C&harr;D, A&rarr;D
+                            <table>
+                                    <tr>
+                                        <td>A</td>
+                                        <td>&rarr;</td>
+                                        <td>B</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Possible</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>B&harr;C</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Possible</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="text-align:right">C</td>
+                                        <td>&harr;</td>
+                                        <td>D</td>
+                                        <td>Possible</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>&rarr;</td>
+                                        <td>D</td>
+                                        <td>Possible</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                        </ul>
+                    </li>
+                    <li>The connection between courses can have two strengths: <span class="auto-style1"><strong>Required</strong></span> (a &quot;must be&quot; connection) or <span class="auto-style1"><strong>Suggested</strong></span> (a &quot;may be&quot; connection).<ul>
+                        <li>&quot;Required&quot; prerequisite: A <strong><em>must be</em></strong> before B</li>
+                        <li>&quot;Required&quot; corequisite: A <strong><em>must be</em></strong> at the same time as B</li>
+                        <li>&quot;Suggested&quot; prerequisite: A <strong><em>may be</em></strong> before B</li>
+                        <li>&quot;Suggested&quot; prerequisite: A <strong><em>may be</em></strong> at the same time as B</li>
+                        </ul>
+                    </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Managing Academic Paths</strong> Story
+            <br />(An Academic Path may be something like a set of courses that fit with a particular career goal or that lead to another level of academic studies such as post-secondary (for high-school courses) or a Masters (for university degrees))
+            <ul>
+                <li></li>
+            </ul>
+        </li>
+        <li><strong>Managing Course Offerings</strong> Story
+            <ul>
+                <li></li>
+            </ul>
+        </li>
+        <li><strong>Managing Course Locations</strong> (Rooms) Story
+            <ul>
+                <li></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
