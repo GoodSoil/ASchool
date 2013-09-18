@@ -5,4 +5,8 @@ ASchool is a system for managing courses and planning course selections for a se
 
 The project page can be found at http://dagilleland.github.io/ASchool/
 
+There are two main folders at the root:
+- src
+- docs
+
 
