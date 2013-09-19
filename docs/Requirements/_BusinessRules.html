@@ -256,6 +256,34 @@
                 <li></li>
             </ul>
         </li>
+        <li><strong>Managing Course Equivalency Credits</strong> Story
+            <ul>
+                <li>CourseEquivalencyCredit
+                    <ul>
+                        <li>CourseEquivalencyCreditID - PK</li>
+                        <li>CourseID - FK</li>
+                        <li>CourseCreditedID - FK, NULL</li>
+                        <li></li>
+                    </ul>
+                    Represents a mapping between a course and another course which can substitute as the equivalent in terms of earned credit. If a student has taken a course [CourseEquivalentID], then they can be automatically credited as having taken another (presumably) current course [CourseID].
+                    If [CourseCreditID] is not null, then the equivalency is between two courses within our system/school. If the [CourseCreditID] is null, then the details of the equivalency is given in the CourseEquivalencyDetails table.
+                </li>
+                <li>CourseEquivalencyDetails
+                    <ul>
+                        <li>CourseEquivalencyCreditID - FK, PK</li>
+                        <li>CourseNumber</li>
+                        <li>CourseName</li>
+                        <li>Description</li>
+                        <li>OriginalCreditValue</li>
+                        <li>Institution</li>
+                        <li>EffectiveFromDate</li>
+                        <li>EffectiveToDate - NULL</li>
+                    </ul>
+                    Details for a CourseEquivalencyCredit whose CourseCreditID value is NULL.
+                </li>
+                <li></li>
+            </ul>
+        </li>
         <li><strong>Managing Course Offerings</strong> Story
             <ul>
                 <li></li>
