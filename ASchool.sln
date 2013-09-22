@@ -25,6 +25,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "docs", "docs\", "{80258BB2-
 		VWDPort = "57432"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "about", "about", "{C6D1F478-79DF-40B3-967F-50ECA641E775}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
