@@ -40,7 +40,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Entities\AcademicPath.cs" />
+    <Compile Include="Entities\AcademicPathMapping.cs" />
+    <Compile Include="Entities\AcademicTerm.cs" />
+    <Compile Include="Entities\Course.cs" />
+    <Compile Include="Entities\CourseDependency.cs" />
+    <Compile Include="Entities\CourseLocation.cs" />
+    <Compile Include="Entities\CourseOffering.cs" />
+    <Compile Include="Entities\MappingDesignation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
