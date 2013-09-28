@@ -57,6 +57,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ASchoolWebsite", "http://lo
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB Scripts", "DB Scripts", "{23E911B5-31E6-4633-85C5-6EE65C7E34B1}"
+	ProjectSection(SolutionItems) = preProject
+		src\DB Scripts\00.01.00.sql = src\DB Scripts\00.01.00.sql
+		src\DB Scripts\ASchool Test Data.sql = src\DB Scripts\ASchool Test Data.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +93,7 @@ Global
 		{C34361C7-55D1-4EA9-B680-E3976A09B66A} = {862F50B2-613C-4188-A712-0E76D93B0E1D}
 		{B3704ACF-1BA0-43A1-B7BE-0E33AA3B8064} = {862F50B2-613C-4188-A712-0E76D93B0E1D}
 		{9AE4CEC8-511B-481A-8416-D13CD3980793} = {862F50B2-613C-4188-A712-0E76D93B0E1D}
+		{23E911B5-31E6-4633-85C5-6EE65C7E34B1} = {862F50B2-613C-4188-A712-0E76D93B0E1D}
 		{80258BB2-43EF-40D8-BC17-F5B06FBE4BB1} = {A001E0FF-98BB-4D07-A70A-7E7F485499BD}
 	EndGlobalSection
 EndGlobal

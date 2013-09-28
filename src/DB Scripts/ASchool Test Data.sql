@@ -1,0 +1,2 @@
+-- Test data to use in the ASchool project.
+-- This should be a suite of Insert statements that can cleanly be run to build or rebuild the test data.

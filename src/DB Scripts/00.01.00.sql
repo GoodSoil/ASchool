@@ -1,0 +1,2 @@
+-- Initial Database Install Scripts
+-- TODO: Create tables (basic DDL stuff)
