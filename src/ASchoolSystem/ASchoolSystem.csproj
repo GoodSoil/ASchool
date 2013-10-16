@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,7 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BLL\AbstractManager.cs" />
+    <Compile Include="BLL\AcademicManager.cs" />
+    <Compile Include="BLL\CourseManager.cs" />
+    <Compile Include="BLL\CourseOfferingManager.cs" />
+    <Compile Include="DAL\DataContextProvider.cs" />
+    <Compile Include="DAL\IDataContext.cs" />
+    <Compile Include="DAL\IDataContextProvider.cs" />
+    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\PetaPocoRepository.cs" />
     <Compile Include="Entities\AcademicPath.cs" />
     <Compile Include="Entities\AcademicPathMapping.cs" />
     <Compile Include="Entities\AcademicTerm.cs" />
@@ -47,11 +56,14 @@
     <Compile Include="Entities\CourseDependency.cs" />
     <Compile Include="Entities\CourseLocation.cs" />
     <Compile Include="Entities\CourseOffering.cs" />
+    <Compile Include="Entities\CourseStatus.cs" />
+    <Compile Include="Entities\IPagedList.cs" />
     <Compile Include="Entities\MappingDesignation.cs" />
+    <Compile Include="DAL\PetaPoco\PetaPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\" />
+    <None Include="DAL\ASchool DAL.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
