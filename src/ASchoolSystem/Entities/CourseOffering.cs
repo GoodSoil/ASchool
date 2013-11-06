@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ASchoolSystem.DAL.PetaPoco;
 
 namespace ASchoolSystem.Entities
 {
@@ -11,6 +12,7 @@ namespace ASchoolSystem.Entities
     /// <summary>
     /// A CourseOffering is for a specific course in a specific Academic Term. It also has a section name.
     /// </summary>
+    [PrimaryKey("CourseOfferingID")]
     public class CourseOffering
     {
         public int CourseOfferingID { get; set; }
@@ -18,9 +20,8 @@ namespace ASchoolSystem.Entities
         public int AcademicTermID { get; set; }
         public string SectionName { get; set; }
 
-        //[IgnoreColumn]
-        public Course Course { get; set; }
-        public List<CourseLocation> Locations { get; set; }
-        public AcademicTerm Term { get; set; }
+        [Ignore] public Course Course { get; set; }
+        [Ignore] public List<CourseLocation> Locations { get; set; }
+        [Ignore] public AcademicTerm Term { get; set; }
     }
 }

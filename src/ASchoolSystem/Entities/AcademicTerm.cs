@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ASchoolSystem.DAL.PetaPoco;
 
 namespace ASchoolSystem.Entities
 {
@@ -11,6 +12,7 @@ namespace ASchoolSystem.Entities
     /// <summary>
     /// Can be either a semester, trimester, or quarter. It has a start date, end date, and duration (in weeks, excluding weeks off such as Reading Break)
     /// </summary>
+    [PrimaryKey("AcademicTermID")]
     public class AcademicTerm
     {
         public int AcademicTermID { get; set; }

@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ASchoolSystem.DAL.PetaPoco;
 
 namespace ASchoolSystem.Entities
 {
     /// <summary>
     /// Name and Description
     /// </summary>
+    [PrimaryKey("AcademicPathID")]
     public class AcademicPath
     {
         public int AcademicPathID { get; set; }

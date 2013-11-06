@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ASchoolSystem.DAL.PetaPoco;
 
 namespace ASchoolSystem.Entities
 {
@@ -11,6 +12,7 @@ namespace ASchoolSystem.Entities
     /// <summary>
     /// A CourseLocation is for a specific CourseOffering and has a room and a time slot (start/end)
     /// </summary>
+    [PrimaryKey("CourseLocationID")]
     public class CourseLocation
     {
         public int CourseLocationID { get; set; }

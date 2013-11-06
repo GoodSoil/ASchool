@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="ASchoolSystem.DAL.DataContextProvider">
+    <Position X="4.25" Y="3.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DAL\DataContextProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ASchoolSystem.DAL.PetaPocoDataContext">
+    <Position X="4.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAQAAAAAAEAAAAAAAAABAAAgAAAAIAA=</HashCode>
+      <FileName>DAL\DataContextProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ASchoolSystem.DAL.PetaPoco.Database">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACUUocAbKDAQAUcECAEEBCjAIDmAEAgpAEBCgiEARQA=</HashCode>
+      <FileName>DAL\PetaPoco\PetaPoco.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ASchoolSystem.DAL.PetaPocoRepository&lt;T&gt;">
+    <Position X="7.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAACAAAABAAAABAAAAAAEYAAQAAAAAAAAAAIA=</HashCode>
+      <FileName>DAL\PetaPocoRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ASchoolSystem.DAL.IDataContext">
+    <Position X="4.25" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAEABAAAAAAQAAAAAAEAAAAAAAAABAAAgAAAAIAA=</HashCode>
+      <FileName>DAL\IDataContext.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ASchoolSystem.DAL.IDataContextProvider">
+    <Position X="4.25" Y="7.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DAL\IDataContextProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ASchoolSystem.DAL.IRepository&lt;T&gt;">
+    <Position X="7.5" Y="5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAABAAAAAAAAAAAEYAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>DAL\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
