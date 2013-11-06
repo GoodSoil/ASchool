@@ -9,7 +9,7 @@ namespace ASchoolSystem.Requirements.AcceptanceTests.Scenarios
 {
     public class _AnSqlParameterizedScenarioTemplate
     {
-        [Fact]
+        [Fact(Skip = "This test is not developed yet")]
         [Trait("Sample", "99")]
         public void WriteParameterizedTestsWithSqlData()
         {
