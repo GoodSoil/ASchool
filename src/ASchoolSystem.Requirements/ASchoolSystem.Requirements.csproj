@@ -60,6 +60,7 @@
     <Compile Include="AcceptanceTests\_Samples\_CommonBaseClass.cs" />
     <Compile Include="AcceptanceTests\_Samples\_AnSqlParameterizedScenarioTemplate.cs" />
     <Compile Include="AcceptanceTests\_Samples\__AcceptanceTestTemplate.cs" />
+    <Compile Include="Helpers\Databases.cs" />
     <Compile Include="Helpers\DbProviderFake.cs" />
     <Compile Include="Helpers\IFakeDbBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
