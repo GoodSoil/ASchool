@@ -1,8 +1,15 @@
 ﻿# Assorted Thots...
 
+## Core Tenents
+- A culture of
+  - Learning - This project is all about growing our skills and knowlege.
+  - Forgiveness - Making mistakes is part of learning, so the way we handle mistakes is important! Being able to "re-boot" after a mistake is important, so that lessons can be learned & we can move forward.
+  - 
 ### Project Mangement
 What I hope to achieve:
-- [ ] Playing the role of "benevolent dictator" on the project, I hope to have a hand in most areas, but I also need to avoid any "micro-management" since this is supposed to be a community project.
+- A Complete End-to-End Project
+  - Starting with a "Business PLan" - using http://leanstack.com
+- Playing the role of "benevolent dictator" on the project, I hope to have a hand in most areas, but I also need to avoid any "micro-management" since this is supposed to be a community project.
 Here's some good quotes:
 
 http://www.smartsheet.com/blog/support-tip-milestones-in-project-management
