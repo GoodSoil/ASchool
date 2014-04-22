@@ -1,6 +1,8 @@
 ﻿# Assorted Thots...
 
 ### Project Mangement
+What I hope to achieve:
+- [ ] Playing the role of "benevolent dictator" on the project, I hope to have a hand in most areas, but I also need to avoid any "micro-management" since this is supposed to be a community project.
 Here's some good quotes:
 
 http://www.smartsheet.com/blog/support-tip-milestones-in-project-management
