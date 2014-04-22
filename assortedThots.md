@@ -4,7 +4,7 @@
 - A culture of
   - Learning - This project is all about growing our skills and knowlege.
   - Forgiveness - Making mistakes is part of learning, so the way we handle mistakes is important! Being able to "re-boot" after a mistake is important, so that lessons can be learned & we can move forward.
-  - 
+
 ### Project Mangement
 What I hope to achieve:
 - A Complete End-to-End Project
